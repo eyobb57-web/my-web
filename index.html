@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyob Behabitu - Personal Website</title>
+    <style>
+        :root {
+            --bg-light: #f4f6f8;
+            --text-light: #333;
+            --card-light: #ffffff;
+            --primary-light: #007acc;
+            --primary-dark: #005a99;
+            
+            --bg-dark: #121212;
+            --text-dark: #f5f5f5;
+            --card-dark: #1e1e1e;
+            --primary-darkmode: #4da8ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cv-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: white;
+            color: var(--primary-light);
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .cv-button:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 10px;
+        }
+
+        section {
+            background: var(--card-light);
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease, background 0.3s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: var(--primary-light);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.8s ease, transform 0.8s ease, background 0.3s;
+        }
+
+        li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--bg-dark);
+                color: var(--text-dark);
+            }
+            section {
+                background: var(--card-dark);
+            }
+            h2 {
+                color: var(--primary-darkmode);
+                border-bottom-color: #333;
+            }
+            li {
+                background: #2a2a2a;
+            }
+            footer {
+                color: #aaa;
+            }
+            a {
+                color: var(--primary-darkmode);
+            }
+            .cv-button {
+                background: var(--primary-darkmode);
+                color: black;
+            }
+            .cv-button:hover {
+                background: white;
+                color: var(--primary-darkmode);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header img {
+                width: 100px;
+                height: 100px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            main {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="profile.jpg" alt="Eyob Behabitu">
+    <h1>Eyob Behabitu</h1>
+    <p>ICT Teacher | Network Administrator</p>
+    <a href="Eyob_Behabitu_CV.pdf" class="cv-button" download>📄 Download CV</a>
+</header>
+
+<main>
+    <section>
+        <h2>About Me</h2>
+        <p>Hello! My name is Eyob Behabitu. I’m passionate about technology, education, and networking. I have experience teaching ICT, computer maintenance, and web design, and I aim to grow as a skilled network administrator.</p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>Computer Networking</li>
+            <li>Web Design (HTML, CSS)</li>
+            <li>Computer Maintenance</li>
+            <li>Teaching ICT</li>
+            <li>Cisco Networking</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p>Phone: +251-XXX-XXX-XXX</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/eyob</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Eyob Behabitu. All rights reserved.</p>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll('section');
+    const skills = document.querySelectorAll('li');
+
+    function revealOnScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < triggerBottom) {
+                section.classList.add('visible');
+            }
+        });
+
+        skills.forEach((skill, index) => {
+            const skillTop = skill.getBoundingClientRect().top;
+            if (skillTop < triggerBottom) {
+                setTimeout(() => {
+                    skill.classList.add('visible');
+                }, index * 150);
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>
